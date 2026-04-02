@@ -1,0 +1,50 @@
+[
+    {
+        "test_name": "Login Test",
+        "status": "failed",
+        "type": "element_not_found",
+        "message": "NoSuchElementException: Unable to locate element: #username",
+        "timestamp": "2026-03-31T10:00:00",
+        "env": "QA"
+    },
+    {
+        "test_name": "Checkout Test",
+        "status": "failed",
+        "type": "timeout",
+        "message": "TimeoutException: Page load timed out after 30 seconds",
+        "timestamp": "2026-03-31T10:01:00",
+        "env": "QA"
+    },
+    {
+        "test_name": "Payment API Test",
+        "status": "failed",
+        "type": "api_error",
+        "message": "500 Internal Server Error",
+        "timestamp": "2026-03-31T10:02:00",
+        "env": "QA"
+    },
+    {
+        "test_name": "Search Feature Test",
+        "status": "failed",
+        "type": "assertion_error",
+        "message": "AssertionError: Expected 'Product A' but got 'Product B'",
+        "timestamp": "2026-03-31T10:03:00",
+        "env": "QA"
+    },
+    {
+        "test_name": "Profile Update Test",
+        "status": "passed",
+        "type": "success",
+        "message": "Test executed successfully",
+        "timestamp": "2026-03-31T10:04:00",
+        "env": "QA"
+    },
+    {
+        "test_name": "File Upload Test",
+        "status": "failed",
+        "type": "network_issue",
+        "message": "ConnectionError: Failed to establish a new connection",
+        "timestamp": "2026-03-31T10:05:00",
+        "env": "QA"
+    }
+]

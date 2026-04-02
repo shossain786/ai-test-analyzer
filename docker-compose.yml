@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+
+  ml-service:
+    build: ./ml-service
+    container_name: ml-service
+    ports:
+      - "8000:8000"
+
+  test-runner:
+    build: ./automation
+    container_name: test-runner
+    depends_on:
+      - ml-service
