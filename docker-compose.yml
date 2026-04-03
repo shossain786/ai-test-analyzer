@@ -13,3 +13,7 @@ services:
     container_name: test-runner
     depends_on:
       - ml-service
+    volumes:
+      - ./automation:/app
+    
+    
