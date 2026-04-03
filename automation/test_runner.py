@@ -4,6 +4,7 @@ import requests
 import time
 import logging
 import time
+import datetime
 
 def call_api_with_retry(log, retries=3):
     for attempt in range(retries):
@@ -38,6 +39,9 @@ if __name__ == "__main__":
 
     results = [run_test() for _ in range(5)]
 
+    category_counts = {}
+    final_results = []
+
     for log in results:
         if log.get("type") == "success":
             msg = "PASSED"
@@ -47,6 +51,15 @@ if __name__ == "__main__":
 
         try:
             result = call_api_with_retry(log)
+            cat = result.get("category", "Unknown")
+            category_counts[cat] = category_counts.get(cat, 0) + 1
+
+            final_results.append({
+                "timestamp": datetime.datetime.now().isoformat(),
+                "input": log,
+                "output": result
+            })
+
             print(result)
             logging.info(f"Input: {log} | Output: {result}")
 
@@ -61,3 +74,8 @@ if __name__ == "__main__":
 
     print(summary)
     logging.info(summary)
+    print("Failure Categories:", category_counts)
+    logging.info(f"Failure Categories: {category_counts}")
+
+    with open("/app/final_results.json", "w") as f:
+        json.dump(final_results, f, indent=4)

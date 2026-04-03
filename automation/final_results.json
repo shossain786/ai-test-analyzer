@@ -1,0 +1,35 @@
+[
+    {
+        "timestamp": "2026-04-03T06:42:47.582279",
+        "input": {
+            "type": "element_not_found",
+            "message": "NoSuchElementException"
+        },
+        "output": {
+            "status": "Failed",
+            "category": "Locator Issue"
+        }
+    },
+    {
+        "timestamp": "2026-04-03T06:42:47.593216",
+        "input": {
+            "type": "timeout",
+            "message": "TimeoutException"
+        },
+        "output": {
+            "status": "Failed",
+            "category": "Performance Issue"
+        }
+    },
+    {
+        "timestamp": "2026-04-03T06:42:47.604004",
+        "input": {
+            "type": "timeout",
+            "message": "TimeoutException"
+        },
+        "output": {
+            "status": "Failed",
+            "category": "Performance Issue"
+        }
+    }
+]
